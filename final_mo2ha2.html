@@ -6,7 +6,8 @@
 
         /* setting */
         :root {
-            --face-color: #FFFFF9;
+            /* --face-color: #FFFFF9; */
+            --face-color: white;
             --tongue-color: #FF5E79;
         }
 
@@ -32,12 +33,12 @@
             width: 1000px;
             height: 600px;
             /* background: white; */
-            top: 200px;
+            top: 150px;
         }
         .dog {
             position: absolute;
             /* width: 500px;
-            height: 300px; */
+            height: 400px; */
         }
         .dog.mozzi {
             top: 240px;
@@ -114,47 +115,261 @@
             height: 200px;
         }
         .dog.mozzi .face .part.face-top-left {
-            top: 30px;
-            left: 45px;
+            top: 35px;
+            left: 52px;
         }
         .dog.mozzi .face .part.face-top-middle {
-            left: 120px;
-            width: 250px;
+            left: 115px;
+            width: 270px;
             height: 200px;
         }
         .dog.mozzi .face .part.face-top-right {
-            top: 30px;
+            top: 35px;
             left: 242px;
         }
         .dog.mozzi .face .part.face-bottom-right {
-            top: 125px;
-            left: 240px;
+            top: 130px;
+            left: 234px;
         }
         .dog.mozzi .face .part.face-bottom-left {
-            top: 125px;
+            top: 133px;
             left: 46px;
         }
         .dog.mozzi .face .part.face-bottom-middle {
-            top: 135px;
+            top: 145px;
             left: 142px;
         }
         .dog.mozzi .face .face-cover {
             position: absolute;
-            top: 25px;
+            top: 48px;
             left: 70px;
             width: 340px;
-            height: 290px;
+            height: 280px;
             border-radius: 50%;
             /* border: 1px solid red; */
             background-color: var(--face-color);
         }
 
-        /* 눈,코,입 */
-        /* 모찌 표정 */
-        /* 모리 표정 */
-        /* 하치 표정 */
-        /* 하루 표정 */
 
+
+        /* 눈,코,입 */
+        /* 눈 */
+        .dog .face .face-cover .eye {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .dog .face .face-cover .eye.left-eye {
+            top: 100px;
+            left: 65px;
+        }
+        .dog .face .face-cover .eye.right-eye {
+            top: 100px;
+            right: 65px;
+        }
+        /* 동공 */
+        .dog .face .face-cover .eye .pupil{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        /* 코 */
+        .dog .face .face-cover .nose {
+            position: absolute;
+            background-color: black;
+            border-radius: 30px;
+        }
+        .dog .face .face-cover .nose.nose-top {
+            width: 30px;
+            height: 15px;
+            top: 140px;
+            left: 114px;
+        }
+        .dog .face .face-cover .nose.nose-bottom {
+            width: 22px;
+            height: 15px;
+            top: 144px;
+            left: 118px;
+        }
+        /* 입 */
+        .dog .face .face-cover .mouth {
+            position: absolute;
+            width: 25px;
+            height: 15px;
+            border-radius: 50%;
+            border: 3px solid black;
+            background-color: white;
+            top: 160px;
+        }
+        .dog .face .face-cover .mouth.lip-left {
+            left: 105px;
+        }
+        .dog .face .face-cover .mouth.lip-right {
+            right: 102px;
+        }
+        .dog .face .face-cover .mouth-cover {
+            position: absolute;
+            width: 55px;
+            height: 8px;
+            background-color: white;
+            top: 160px;
+            left: 102px;
+        }
+
+
+        /* 모찌 표정 */
+        .dog.mozzi .face .face-cover .eye.left-eye {
+            top: 140px;
+            left: 105px;
+        }
+        .dog.mozzi .face .face-cover .eye.right-eye {
+            top: 140px;
+            right: 105px;
+        }
+        .dog.mozzi .face .face-cover .eye .pupil.left-pupil {
+            top: 23px;
+            left: 18px;
+        }
+        .dog.mozzi .face .face-cover .eye .pupil.right-pupil {
+            top: 23px;
+            right: 18px;
+        }
+        /* 모찌 갈색코(그라데이션) */
+        .dog.mozzi .face .face-cover .nose.nose-top {
+            width: 30px;
+            height: 15px;
+            top: 187px;
+            left: 158px;
+            background: linear-gradient(black,#725530);
+        }
+        .dog.mozzi .face .face-cover .nose.nose-bottom {
+            width: 22px;
+            height: 15px;
+            top: 191px;
+            left: 162px;
+            background-color: #725530;
+        }
+        /* 모찌 닭다리 인형 */
+        .dog.mozzi .face .face-cover .chicken {
+            position: absolute;
+            width: 110px;
+            height : 60px;
+            border-radius: 50%;
+            background-color: #A97229;
+        }
+        .dog.mozzi .face .face-cover .chicken.meat-top {
+            top: 210px;
+            left: 125px;
+        }
+        .dog.mozzi .face .face-cover .chicken.meat-bottom {
+            top: 220px;
+            left: 125px;
+            transform: rotate(13deg);
+        }
+        .dog.mozzi .face .face-cover .chicken-bone {
+            position: absolute;
+            background-color: #D5D5D4;
+        }
+        .dog.mozzi .face .face-cover .big {
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+            top: 225px;
+            left: 80px;
+        }
+        .dog.mozzi .face .face-cover .small {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .dog.mozzi .face .face-cover .small.bone-top {
+            top: 215px;
+            left: 70px;
+        }
+        .dog.mozzi .face .face-cover .small.bone-bottom {
+            top: 235px;
+            left: 70px;
+        }
+        /* 모찌 입 */
+        .dog.mozzi .face .face-cover .mouth {
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid black;
+            top: 200px;
+        }
+        .dog.mozzi .face .face-cover .mouth.lip-left {
+            left: 152px;
+        }
+        .dog.mozzi .face .face-cover .mouth.lip-right {
+            right: 142px;
+        }
+        .dog.mozzi .face .face-cover .mouth-cover {
+            position: absolute;
+            width: 55px;
+            height: 13px;
+            background-color: white;
+            top: 196px;
+            left: 145px;
+        }
+
+        /* 모리 표정 */
+        .dog.mori .face .face-cover .eye .pupil.left-pupil {
+            top: 2px;
+            left: 15px;
+        }
+        .dog.mori .face .face-cover .eye .pupil.right-pupil {
+            top: 2px;
+            right: 15px;
+        }
+        /* 모리 무표정 도톰 입 */
+        .dog.mori .face .face-cover .mouth.lip {
+            border: 5px solid black;
+            border-radius: 15px;
+            left: 117px;
+            top: 155px;
+        }
+        .dog.mori .face .face-cover .mouth-cover {
+            width: 55px;
+            height: 20px;
+            top: 147px;
+            left: 102px;
+        }
+        /* 하치 표정 */
+        .dog.hachi .face .face-cover .eye .pupil.left-pupil {
+            top: 5px;
+            left: 20px;
+        }
+        .dog.hachi .face .face-cover .eye .pupil.right-pupil {
+            top: 5px;
+            left: 20px;
+        }
+        .dog.hachi .face .face-cover .eye-cover {
+            position: absolute;
+            width: 150px;
+            height: 20px;
+            background-color: white;
+            top: 125px;
+            left: 50px;
+        }
+        /* 하루 표정 */
+        /* 눈 좀 더 작게(미간 넓게) */
+        .dog.haru .face .face-cover .eye {
+            width: 30px;
+            height: 30px;
+        }
+        .dog.haru .face .face-cover .eye .pupil {
+            width: 8px;
+            height: 8px;
+            top: 20px;
+            left: 11px;
+        }
     </style>
 </head>
 <body>
@@ -167,7 +382,20 @@
                 <div class="part face-bottom-right"></div>
                 <div class="part face-bottom-left"></div>
                 <div class="part face-bottom-middle"></div>
-                <div class="face-cover"></div>
+                <div class="face-cover">
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="eye-cover"></div>
+                    <div class="nose nose-top"></div>
+                    <div class="nose nose-bottom"></div>
+                    <div class="mouth lip-left"></div>
+                    <div class="mouth lip-right"></div>
+                    <div class="mouth-cover"></div>
+                </div>
             </div>
         </div>
         <div class="dog haru">
@@ -178,7 +406,19 @@
                 <div class="part face-bottom-right"></div>
                 <div class="part face-bottom-left"></div>
                 <div class="part face-bottom-middle"></div>
-                <div class="face-cover"></div>
+                <div class="face-cover">
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="nose nose-top"></div>
+                    <div class="nose nose-bottom"></div>
+                    <div class="mouth lip-left"></div>
+                    <div class="mouth lip-right"></div>
+                    <div class="mouth-cover"></div>
+                </div>
             </div>
         </div>
         <div class="dog mori">
@@ -189,7 +429,18 @@
                 <div class="part face-bottom-right"></div>
                 <div class="part face-bottom-left"></div>
                 <div class="part face-bottom-middle"></div>
-                <div class="face-cover"></div>
+                <div class="face-cover">
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="mouth lip"></div>
+                    <div class="mouth-cover"></div>
+                    <div class="nose nose-top"></div>
+                    <div class="nose nose-bottom"></div>
+                </div>
             </div>
         </div>
         <div class="dog mozzi">
@@ -200,7 +451,24 @@
                 <div class="part face-bottom-right"></div>
                 <div class="part face-bottom-left"></div>
                 <div class="part face-bottom-middle"></div>
-                <div class="face-cover"></div>
+                <div class="face-cover">
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="chicken-bone big"></div>
+                    <div class="chicken-bone small bone-top"></div>
+                    <div class="chicken-bone small bone-bottom"></div>
+                    <div class="chicken meat-top"></div>
+                    <div class="chicken meat-bottom"></div> 
+                    <div class="mouth lip-left"></div>
+                    <div class="mouth lip-right"></div>
+                    <div class="mouth-cover"></div>
+                    <div class="nose nose-bottom"></div>
+                    <div class="nose nose-top"></div>
+                </div>
             </div>
         </div>
     </div>
