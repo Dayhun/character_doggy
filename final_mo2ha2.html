@@ -105,7 +105,7 @@
             border-radius: 50%;
             background-color: var(--face-color);
         }
-        /* 모찌 얼굴 크게 조정 */
+        /* 모찌만 얼굴 크게 조정 */
         .dog.mozzi .face .part {
             position: absolute;
             border: 4px solid black;
@@ -149,10 +149,6 @@
             /* border: 1px solid red; */
             background-color: var(--face-color);
         }
-
-
-
-        /* 눈,코,입 */
         /* 눈 */
         .dog .face .face-cover .eye {
             position: absolute;
@@ -220,7 +216,7 @@
             left: 102px;
         }
 
-
+        /* 강아지별 표정 css */
         /* 모찌 표정 */
         .dog.mozzi .face .face-cover .eye.left-eye {
             top: 140px;
@@ -254,23 +250,23 @@
             background-color: #725530;
         }
         /* 모찌 닭다리 인형 */
-        .dog.mozzi .face .face-cover .chicken {
+        .dog.mozzi .face .face-cover .chicken-doll .chicken {
             position: absolute;
             width: 110px;
             height : 60px;
             border-radius: 50%;
             background-color: #A97229;
         }
-        .dog.mozzi .face .face-cover .chicken.meat-top {
+        .dog.mozzi .face .face-cover .chicken-doll .chicken.meat-top {
             top: 210px;
             left: 125px;
         }
-        .dog.mozzi .face .face-cover .chicken.meat-bottom {
+        .dog.mozzi .face .face-cover .chicken-doll .chicken.meat-bottom {
             top: 220px;
             left: 125px;
             transform: rotate(13deg);
         }
-        .dog.mozzi .face .face-cover .chicken-bone {
+        .dog.mozzi .face .face-cover .chicken-doll .chicken-bone {
             position: absolute;
             background-color: #D5D5D4;
         }
@@ -318,6 +314,21 @@
             top: 196px;
             left: 145px;
         }
+        /* 모찌 볼 */
+        .dog.mozzi .face .face-cover .cheek {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: pink;
+            border-radius: 100%;
+            top: 175px
+        }
+        .dog.mozzi .face .face-cover .cheek.left-cheek {
+            left: 70px;
+        }
+        .dog.mozzi .face .face-cover .cheek.right-cheek {
+            right: 70px;
+        }
 
         /* 모리 표정 */
         /* 모리 눈 작게 */
@@ -346,8 +357,9 @@
             top: 147px;
             left: 102px;
         }
-        
+
         /* 하치 표정 */
+        /* 하치 호기심 가득한 눈 */
         .dog.hachi .face .face-cover .eye .pupil.left-pupil {
             top: 5px;
             left: 20px;
@@ -531,17 +543,21 @@
                 <div class="part face-bottom-left"></div>
                 <div class="part face-bottom-middle"></div>
                 <div class="face-cover">
+                    <div class="cheek left-cheek"></div>
+                    <div class="cheek right-cheek"></div>
                     <div class="eye left-eye">
                         <div class="pupil left-pupil"></div>
                     </div>
                     <div class="eye right-eye">
                         <div class="pupil right-pupil"></div>
                     </div>
-                    <div class="chicken-bone big"></div>
-                    <div class="chicken-bone small bone-top"></div>
-                    <div class="chicken-bone small bone-bottom"></div>
-                    <div class="chicken meat-top"></div>
-                    <div class="chicken meat-bottom"></div> 
+                    <div class="chicken-doll">
+                        <div class="chicken-bone big"></div>
+                        <div class="chicken-bone small bone-top"></div>
+                        <div class="chicken-bone small bone-bottom"></div>
+                        <div class="chicken meat-top"></div>
+                        <div class="chicken meat-bottom"></div> 
+                    </div>
                     <div class="mouth lip-left"></div>
                     <div class="mouth lip-right"></div>
                     <div class="mouth-cover"></div>
