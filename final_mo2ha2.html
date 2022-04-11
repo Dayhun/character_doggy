@@ -3,6 +3,78 @@
 <head>
     <style>
         /* animation */
+        @keyframes 모찌입우물우물 {
+            0%, 100% {
+                transform: translate3d(0, 0, 0)
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translate3d(-1px, 0, 0)
+            }
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translate3d(1px, 0, 0)
+            }
+        }
+        @keyframes 왼쪽볼움직이기 {
+            0%, 100% {
+                left: 46px;
+            }
+            50% {
+                left: 45px;
+            }
+            70% {
+                left: 44px;
+            }
+        }
+        @keyframes 오른쪽볼움직이기 {
+            0%, 100% {
+                left: 234px;
+            }
+            50% {
+                left: 235px;
+            }
+            70% {
+                left: 236px;
+            }
+        }
+        @keyframes 혀내밀기 {
+            from{
+                transform: translatey(0px);
+            }
+            to {
+                transform: translatey(-20px);
+            }
+        }
+        @keyframes 왼쪽이동 {
+            from {
+                transform: translatex(0px);
+            }
+            to {
+                transform: translatex(-15px);
+            }
+        }
+        @keyframes 오른쪽이동 {
+            from {
+                transform: translatex(0px);
+            }
+            to {
+                transform: translatex(15px);
+            }
+        }
+        @keyframes 위로이동 {
+            from {
+                transform: translatey(0px);
+            }
+            to {
+                transform: translatey(-60px);
+            }
+        }
 
         /* setting */
         :root {
@@ -130,10 +202,12 @@
         .dog.mozzi .face .part.face-bottom-right {
             top: 130px;
             left: 234px;
+            animation: 오른쪽볼움직이기 0.5s infinite alternate;
         }
         .dog.mozzi .face .part.face-bottom-left {
             top: 133px;
             left: 46px;
+            animation: 왼쪽볼움직이기 0.5s infinite alternate;
         }
         .dog.mozzi .face .part.face-bottom-middle {
             top: 145px;
@@ -210,9 +284,10 @@
         .dog .face .face-cover .mouth-cover {
             position: absolute;
             width: 55px;
-            height: 8px;
+            /* height: 8px; */
+            height: 37px;
             background-color: white;
-            top: 160px;
+            top: 130px;
             left: 102px;
         }
 
@@ -256,6 +331,7 @@
             height : 60px;
             border-radius: 50%;
             background-color: #A97229;
+            animation: 모찌입우물우물 5s infinite alternate;
         }
         .dog.mozzi .face .face-cover .chicken-doll .chicken.meat-top {
             top: 210px;
@@ -269,6 +345,7 @@
         .dog.mozzi .face .face-cover .chicken-doll .chicken-bone {
             position: absolute;
             background-color: #D5D5D4;
+            animation: 모찌입우물우물 5s infinite alternate;
         }
         .dog.mozzi .face .face-cover .big {
             width: 100px;
@@ -299,6 +376,7 @@
             border-radius: 50%;
             border: 2px solid black;
             top: 200px;
+            animation: 모찌입우물우물 4s infinite alternate;
         }
         .dog.mozzi .face .face-cover .mouth.lip-left {
             left: 152px;
@@ -357,6 +435,10 @@
             top: 147px;
             left: 102px;
         }
+        /* 모리 왼쪽 이동 애니메이션 */
+        .dog.mori .face {
+            animation: 왼쪽이동 1s infinite alternate;
+        }
 
         /* 하치 표정 */
         /* 하치 호기심 가득한 눈 */
@@ -382,10 +464,10 @@
             width: 30px;
             height: 40px;
             background-color: #FF5E79;
-            left: 114px;
+            left: 110px;
             top: 170px;
             border-radius: 68% 32% 64% 36% / 69% 26% 74% 31% ;
-            transform: rotate(-20deg);
+            animation: 혀내밀기 1.5s infinite ease-in-out alternate;
         }
         .dog.hachi .face .face-cover .tongue .tongue-line {
             position: absolute;
@@ -405,6 +487,10 @@
             right: 3px;
             background-color: #FF5E79;
             border-radius: 0 0 90% 0;
+        }
+        /* 하치 오른쪽 이동 애니메이션 */
+        .dog.hachi .face {
+            animation: 오른쪽이동 1s infinite alternate;
         }
 
         /* 하루 표정 */
@@ -457,6 +543,10 @@
         .dog.haru .face .face-cover .nose.nose-bottom {
             background-color: #725530;
         }
+        /* 하루 위로 이동 애니메이션 */
+        .dog.haru .face {
+            animation: 위로이동 4s infinite alternate;
+        }
     </style>
 </head>
 <body>
@@ -477,14 +567,14 @@
                         <div class="pupil right-pupil"></div>
                     </div>
                     <div class="eye-cover"></div>
-                    <div class="nose nose-top"></div>
-                    <div class="nose nose-bottom"></div>
                     <div class="tongue">
                         <div class="tongue-line"></div>
                     </div>
                     <div class="mouth lip-left"></div>
                     <div class="mouth lip-right"></div>
                     <div class="mouth-cover"></div>
+                    <div class="nose nose-top"></div>
+                    <div class="nose nose-bottom"></div>
                 </div>
             </div>
         </div>
