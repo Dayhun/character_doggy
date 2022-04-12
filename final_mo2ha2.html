@@ -12,13 +12,13 @@
             50%,
             70%,
             90% {
-                transform: translate3d(-1px, 0, 0)
+                transform: translate3d(-1px, -1px, 0)
             }
             20%,
             40%,
             60%,
             80% {
-                transform: translate3d(1px, 0, 0)
+                transform: translate3d(1px, -2px, 0)
             }
         }
         @keyframes 왼쪽볼움직이기 {
@@ -29,7 +29,7 @@
                 left: 45px;
             }
             70% {
-                left: 44px;
+                left: 43px;
             }
         }
         @keyframes 오른쪽볼움직이기 {
@@ -40,7 +40,7 @@
                 left: 235px;
             }
             70% {
-                left: 236px;
+                left: 237px;
             }
         }
         @keyframes 혀내밀기 {
@@ -48,10 +48,10 @@
                 transform: translatey(0px);
             }
             to {
-                transform: translatey(-20px);
+                transform: translatey(-40px);
             }
         }
-        @keyframes 왼쪽이동 {
+        /* @keyframes 왼쪽이동 {
             from {
                 transform: translatex(0px);
             }
@@ -66,16 +66,26 @@
             to {
                 transform: translatex(15px);
             }
-        }
+        } */
         @keyframes 위로이동 {
+            0% {
+                transform: translateY(10px);
+            }
+            80% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes 눈감기 {
             from {
-                transform: translatey(0px);
+                transform: translateY(-10px);
             }
             to {
-                transform: translatey(-60px);
+                transform: translateY(27px);
             }
         }
-
         /* setting */
         :root {
             /* --face-color: #FFFFF9; */
@@ -422,6 +432,25 @@
             top: 2px;
             right: 15px;
         }
+        .dog.mori .face .face-cover .eye-cover {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .dog.mori .face .face-cover .eye-cover.left-eye-cover {
+            transform: rotate(-30deg);
+            top: 60px;
+            left: 60px;
+            animation: 눈감기 2s infinite ;
+        }
+        .dog.mori .face .face-cover .eye-cover.right-eye-cover {
+            transform: rotate(30deg);
+            top: 60px;
+            right: 60px;
+            animation: 눈감기 2s infinite ;
+        }
         /* 모리 무표정 도톰한 입 */
         .dog.mori .face .face-cover .mouth.lip {
             border: 5px solid black;
@@ -467,7 +496,7 @@
             left: 110px;
             top: 170px;
             border-radius: 68% 32% 64% 36% / 69% 26% 74% 31% ;
-            animation: 혀내밀기 1.5s infinite ease-in-out alternate;
+            animation: 혀내밀기 1s infinite ease-in-out alternate;
         }
         .dog.hachi .face .face-cover .tongue .tongue-line {
             position: absolute;
@@ -617,6 +646,8 @@
                     <div class="eye right-eye">
                         <div class="pupil right-pupil"></div>
                     </div>
+                    <div class="eye-cover left-eye-cover"></div>
+                    <div class="eye-cover right-eye-cover"></div>
                     <div class="mouth lip"></div>
                     <div class="mouth-cover"></div>
                     <div class="nose nose-top"></div>
