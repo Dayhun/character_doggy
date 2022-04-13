@@ -6,6 +6,7 @@
 
 ## ✏️ 디자인 초안
 <img width="614" alt="스크린샷 2022-04-14 오전 2 01 27" src="https://user-images.githubusercontent.com/82689971/163232501-5eb864e0-feeb-46da-a379-1b3e3970b706.png">
+<img width="588" alt="스크린샷 2022-04-14 오전 2 49 13" src="https://user-images.githubusercontent.com/82689971/163240297-1d6172f1-0992-4a29-b5c4-6280d8b5361f.png">
 <img width="618" alt="스크린샷 2022-04-14 오전 2 01 48" src="https://user-images.githubusercontent.com/82689971/163232556-7e1026e6-7f07-4bc3-8e7e-f8c28188c8ec.png">
 이렇게 디자인을 짠 후에 시작했습니다.
 
