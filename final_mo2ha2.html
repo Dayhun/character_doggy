@@ -107,7 +107,11 @@
             box-sizing: border-box;
         }
         body {
-            background: #D1FEFF;
+            /* background: #D1FEFF; */
+            /* height: 100vh; */
+            background-image: url('/footprint.png');
+            background-repeat: repeat;
+            background-size: cover;
         }
         .mo2ha2 {
             position: relative;
@@ -142,6 +146,36 @@
             left: 257px;
             /* background: orange; */
         }
+
+        /* img hover */
+        .dog .img .hover-img {
+            width: 400px;
+            position: absolute;
+            display: none;
+        }
+        .dog.hachi:hover .hover-img{
+            display: block;
+            top: -270px;
+            left: 160px;
+        }
+        .dog.haru:hover .hover-img{
+            display: block;
+            top: -220px;
+            left: -290px;
+        }
+        .dog.mori:hover .hover-img{
+            display: block;
+            top: 280px;
+            left: -110px;
+        }
+        .dog.mozzi:hover .hover-img{
+            display: block;
+            top: 170px;
+            left: 450px;
+        }
+
+
+
 
         /* 강아지 얼굴 */       
         /* 강아지(모리,하치,하루) 캐릭터 얼굴 형태 */
@@ -407,7 +441,7 @@
             position: absolute;
             width: 40px;
             height: 20px;
-            background-color: pink;
+            background-color: rgba(255, 192, 203, 0.6);
             border-radius: 100%;
             top: 175px
         }
@@ -482,19 +516,28 @@
         .dog.hachi .face .face-cover .eye-cover {
             position: absolute;
             width: 150px;
-            height: 20px;
+            height: 25px;
             background-color: white;
-            top: 125px;
+            top: 123px;
             left: 50px;
+        }
+        .dog.hachi .face .face-cover .orange-cover {
+            position: absolute;
+            width: 65px;
+            height: 50px;
+            background-color: rgba(255, 200, 87, 0.5);
+            border-radius: 46% 54% 37% 63% / 57% 35% 65% 43%;
+            top: 160px;
+            left: 96px;
         }
         /* 하치 혀 */
         .dog.hachi .face .face-cover .tongue {
             position: absolute;
             width: 30px;
-            height: 40px;
+            height: 35px;
             background-color: #FF5E79;
             left: 110px;
-            top: 170px;
+            top: 171px;
             border-radius: 68% 32% 64% 36% / 69% 26% 74% 31% ;
             animation: 혀내밀기 1s infinite ease-in-out alternate;
         }
@@ -596,6 +639,7 @@
                         <div class="pupil right-pupil"></div>
                     </div>
                     <div class="eye-cover"></div>
+                    <div class="orange-cover"></div>
                     <div class="tongue">
                         <div class="tongue-line"></div>
                     </div>
@@ -605,6 +649,9 @@
                     <div class="nose nose-top"></div>
                     <div class="nose nose-bottom"></div>
                 </div>
+            </div>
+            <div class="img">
+                <img class="hover-img hachi-img" src="/img/hachi.JPEG" alt="하치이미지">
             </div>
         </div>
         <div class="dog haru">
@@ -630,6 +677,9 @@
                     <div class="mouth-cover"></div>
                 </div>
             </div>
+            <div class="img">
+                <img class="hover-img haru-img" src="/img/haru.JPEG" alt="하루이미지">
+            </div>
         </div>
         <div class="dog mori">
             <div class="face">
@@ -653,6 +703,9 @@
                     <div class="nose nose-top"></div>
                     <div class="nose nose-bottom"></div>
                 </div>
+            </div>
+            <div class="img">
+                <img class="hover-img mori-img" src="/img/mori.JPEG" alt="모리이미지">
             </div>
         </div>
         <div class="dog mozzi">
@@ -685,6 +738,9 @@
                     <div class="nose nose-bottom"></div>
                     <div class="nose nose-top"></div>
                 </div>
+            </div>
+            <div class="img">
+                <img class="hover-img mozzi-img" src="/img/mozzi.JPEG" alt="모찌이미지">
             </div>
         </div>
     </div>
