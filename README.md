@@ -11,5 +11,6 @@
 
 ## ✏️ 완성된 모습
 ![mo2ha2](https://user-images.githubusercontent.com/82689971/163234524-a27afba6-e0c5-448d-838f-ece5898756f1.gif)
+<br>
 animation으로 강아지별 특성을 표현하고,<br>
 hover를 통해 각 강아지별 특징 설명을 나타내보았습니다!
