@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        /* animation */
+        @keyframes 모찌입우물우물 {
+            0%, 100% {
+                transform: translate3d(0, 0, 0)
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translate3d(-1px, -1px, 0)
+            }
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translate3d(1px, -2px, 0)
+            }
+        }
+        @keyframes 왼쪽볼움직이기 {
+            0%, 100% {
+                left: 46px;
+            }
+            50% {
+                left: 45px;
+            }
+            70% {
+                left: 43px;
+            }
+        }
+        @keyframes 오른쪽볼움직이기 {
+            0%, 100% {
+                left: 234px;
+            }
+            50% {
+                left: 235px;
+            }
+            70% {
+                left: 237px;
+            }
+        }
+        @keyframes 혀내밀기 {
+            from{
+                transform: translatey(0px);
+            }
+            to {
+                transform: translatey(-40px);
+            }
+        }
+        @keyframes 위로이동 {
+            0% {
+                transform: translateY(10px);
+            }
+            80% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes 눈감기 {
+            from {
+                transform: translateY(-10px);
+            }
+            to {
+                transform: translateY(27px);
+            }
+        }
+        /* setting */
+        :root {
+            --face-color: white;
+            --tongue-color: #FF5E79;
+        }
+
+        /* reset */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* layout */
+        /* desgin */
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url('/img/footprint.png');
+            background-repeat: repeat;
+            background-size: cover;
+        }
+        .mo2ha2 {
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+            height: 600px;
+            top: 150px;
+        }
+        .dog {
+            position: absolute;
+        }
+        .dog.mozzi {
+            top: 240px;
+            left: 260px;
+        }
+        .dog.mori {
+            top: 130px;
+            left: 5px;
+        }
+        .dog.hachi {
+            top: 130px;
+            left: 500px;
+        }
+        .dog.haru {
+            top: 80px;
+            left: 257px;
+        }
+
+        /* img hover */
+        .dog .img .hover-img {
+            width: 400px;
+            position: absolute;
+            display: none;
+        }
+        .dog.hachi:hover .hover-img{
+            display: block;
+            top: -270px;
+            left: 160px;
+        }
+        .dog.haru:hover .hover-img{
+            display: block;
+            top: -220px;
+            left: -290px;
+        }
+        .dog.mori:hover .hover-img{
+            display: block;
+            top: 280px;
+            left: -110px;
+        }
+        .dog.mozzi:hover .hover-img{
+            display: block;
+            top: 170px;
+            left: 450px;
+        }
+
+        /* 강아지 얼굴 */       
+        /* 강아지(모리,하치,하루) 캐릭터 얼굴 형태 */
+        .dog .face .part {
+            position: absolute;
+            border: 4px solid black;
+            border-radius: 50%;
+            background-color: var(--face-color);
+            width: 150px;
+            height: 150px;
+        }
+        .dog .face .part.face-top-left {
+            top: 30px;
+            left: 110px;
+        }
+        .dog .face .part.face-top-middle {
+            left: 150px;
+            width: 200px;
+            height: 150px;
+        }
+        .dog .face .part.face-top-right {
+            top: 30px;
+            left: 250px;
+        }
+        .dog .face .part.face-bottom-right {
+            top: 100px;
+            left: 247px;
+        }
+        .dog .face .part.face-bottom-left {
+            top: 100px;
+            left: 108px;
+        }
+        .dog .face .part.face-bottom-middle {
+            top: 110px;
+            left: 176px;
+        }
+        .dog .face .face-cover {
+            position: absolute;
+            top: 25px;
+            left: 125px;
+            width: 255px;
+            height: 220px;
+            border-radius: 50%;
+            background-color: var(--face-color);
+        }
+        /* 모찌만 얼굴 크게 조정 */
+        .dog.mozzi .face .part {
+            position: absolute;
+            border: 4px solid black;
+            border-radius: 50%;
+            background-color: var(--face-color);
+            width: 200px;
+            height: 200px;
+        }
+        .dog.mozzi .face .part.face-top-left {
+            top: 35px;
+            left: 52px;
+        }
+        .dog.mozzi .face .part.face-top-middle {
+            left: 115px;
+            width: 270px;
+            height: 200px;
+        }
+        .dog.mozzi .face .part.face-top-right {
+            top: 35px;
+            left: 242px;
+        }
+        .dog.mozzi .face .part.face-bottom-right {
+            top: 130px;
+            left: 234px;
+            animation: 오른쪽볼움직이기 0.5s infinite alternate;
+        }
+        .dog.mozzi .face .part.face-bottom-left {
+            top: 133px;
+            left: 46px;
+            animation: 왼쪽볼움직이기 0.5s infinite alternate;
+        }
+        .dog.mozzi .face .part.face-bottom-middle {
+            top: 145px;
+            left: 142px;
+        }
+        .dog.mozzi .face .face-cover {
+            position: absolute;
+            top: 48px;
+            left: 70px;
+            width: 340px;
+            height: 280px;
+            border-radius: 50%;
+            background-color: var(--face-color);
+        }
+        /* 눈 */
+        .dog .face .face-cover .eye {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .dog .face .face-cover .eye.left-eye {
+            top: 100px;
+            left: 65px;
+        }
+        .dog .face .face-cover .eye.right-eye {
+            top: 100px;
+            right: 65px;
+        }
+        /* 동공 */
+        .dog .face .face-cover .eye .pupil{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        /* 코 */
+        .dog .face .face-cover .nose {
+            position: absolute;
+            background-color: black;
+            border-radius: 30px;
+        }
+        .dog .face .face-cover .nose.nose-top {
+            width: 30px;
+            height: 15px;
+            top: 140px;
+            left: 114px;
+        }
+        .dog .face .face-cover .nose.nose-bottom {
+            width: 22px;
+            height: 15px;
+            top: 144px;
+            left: 118px;
+        }
+        /* 입 */
+        .dog .face .face-cover .mouth {
+            position: absolute;
+            width: 25px;
+            height: 15px;
+            border-radius: 50%;
+            border: 3px solid black;
+            background-color: white;
+            top: 160px;
+        }
+        .dog .face .face-cover .mouth.lip-left {
+            left: 105px;
+        }
+        .dog .face .face-cover .mouth.lip-right {
+            right: 102px;
+        }
+        .dog .face .face-cover .mouth-cover {
+            position: absolute;
+            width: 55px;
+            height: 37px;
+            background-color: white;
+            top: 130px;
+            left: 102px;
+        }
+
+        /* 강아지별 표정 css */
+        /* 모찌 표정 */
+        .dog.mozzi .face .face-cover .eye.left-eye {
+            top: 140px;
+            left: 105px;
+        }
+        .dog.mozzi .face .face-cover .eye.right-eye {
+            top: 140px;
+            right: 105px;
+        }
+        .dog.mozzi .face .face-cover .eye .pupil.left-pupil {
+            top: 23px;
+            left: 18px;
+        }
+        .dog.mozzi .face .face-cover .eye .pupil.right-pupil {
+            top: 23px;
+            right: 18px;
+        }
+        /* 모찌 갈색코(그라데이션) */
+        .dog.mozzi .face .face-cover .nose.nose-top {
+            width: 30px;
+            height: 15px;
+            top: 187px;
+            left: 158px;
+            background: linear-gradient(black,#725530);
+        }
+        .dog.mozzi .face .face-cover .nose.nose-bottom {
+            width: 22px;
+            height: 15px;
+            top: 191px;
+            left: 162px;
+            background-color: #725530;
+        }
+        /* 모찌 닭다리 인형 */
+        .dog.mozzi .face .face-cover .chicken-doll .chicken {
+            position: absolute;
+            width: 110px;
+            height : 60px;
+            border-radius: 50%;
+            background-color: #A97229;
+            animation: 모찌입우물우물 5s infinite alternate;
+        }
+        .dog.mozzi .face .face-cover .chicken-doll .chicken.meat-top {
+            top: 210px;
+            left: 125px;
+        }
+        .dog.mozzi .face .face-cover .chicken-doll .chicken.meat-bottom {
+            top: 220px;
+            left: 125px;
+            transform: rotate(13deg);
+        }
+        .dog.mozzi .face .face-cover .chicken-doll .chicken-bone {
+            position: absolute;
+            background-color: #D5D5D4;
+            animation: 모찌입우물우물 5s infinite alternate;
+        }
+        .dog.mozzi .face .face-cover .big {
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+            top: 225px;
+            left: 80px;
+        }
+        .dog.mozzi .face .face-cover .small {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .dog.mozzi .face .face-cover .small.bone-top {
+            top: 215px;
+            left: 70px;
+        }
+        .dog.mozzi .face .face-cover .small.bone-bottom {
+            top: 235px;
+            left: 70px;
+        }
+        /* 모찌 입 */
+        .dog.mozzi .face .face-cover .mouth {
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid black;
+            top: 200px;
+            animation: 모찌입우물우물 4s infinite alternate;
+        }
+        .dog.mozzi .face .face-cover .mouth.lip-left {
+            left: 152px;
+        }
+        .dog.mozzi .face .face-cover .mouth.lip-right {
+            right: 142px;
+        }
+        .dog.mozzi .face .face-cover .mouth-cover {
+            position: absolute;
+            width: 55px;
+            height: 13px;
+            background-color: white;
+            top: 196px;
+            left: 145px;
+        }
+        /* 모찌 볼 */
+        .dog.mozzi .face .face-cover .cheek {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: rgba(255, 192, 203, 0.6);
+            border-radius: 100%;
+            top: 175px
+        }
+        .dog.mozzi .face .face-cover .cheek.left-cheek {
+            left: 70px;
+        }
+        .dog.mozzi .face .face-cover .cheek.right-cheek {
+            right: 70px;
+        }
+
+        /* 모리 표정 */
+        /* 모리 눈 작게 */
+        .dog.mori .face .face-cover .eye {
+            width: 30px;
+            height: 30px;
+        }
+        .dog.mori .face .face-cover .eye .pupil.left-pupil {
+            top: 2px;
+            left: 15px;
+        }
+        .dog.mori .face .face-cover .eye .pupil.right-pupil {
+            top: 2px;
+            right: 15px;
+        }
+        .dog.mori .face .face-cover .eye-cover {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            animation: 눈감기 2s infinite ;
+        }
+        .dog.mori .face .face-cover .eye-cover.left-eye-cover {
+            transform: rotate(-30deg);
+            top: 60px;
+            left: 60px;
+        }
+        .dog.mori .face .face-cover .eye-cover.right-eye-cover {
+            transform: rotate(30deg);
+            top: 60px;
+            right: 60px;
+        }
+        /* 모리 무표정 도톰한 입 */
+        .dog.mori .face .face-cover .mouth.lip {
+            border: 5px solid black;
+            border-radius: 15px;
+            left: 117px;
+            top: 155px;
+        }
+        .dog.mori .face .face-cover .mouth-cover {
+            width: 55px;
+            height: 20px;
+            top: 147px;
+            left: 102px;
+        }
+
+        /* 하치 표정 */
+        /* 하치 호기심 가득한 눈 */
+        .dog.hachi .face .face-cover .eye .pupil.left-pupil {
+            top: 5px;
+            left: 20px;
+        }
+        .dog.hachi .face .face-cover .eye .pupil.right-pupil {
+            top: 5px;
+            left: 20px;
+        }
+        .dog.hachi .face .face-cover .eye-cover {
+            position: absolute;
+            width: 150px;
+            height: 25px;
+            background-color: white;
+            top: 123px;
+            left: 50px;
+        }
+        /* 하치 입주변 노랗게 */
+        .dog.hachi .face .face-cover .orange-cover {
+            position: absolute;
+            width: 65px;
+            height: 50px;
+            background-color: rgba(255, 200, 87, 0.5);
+            border-radius: 46% 54% 37% 63% / 57% 35% 65% 43%;
+            top: 160px;
+            left: 96px;
+        }
+        /* 하치 혀 */
+        .dog.hachi .face .face-cover .tongue {
+            position: absolute;
+            width: 30px;
+            height: 35px;
+            background-color: #FF5E79;
+            left: 110px;
+            top: 171px;
+            border-radius: 68% 32% 64% 36% / 69% 26% 74% 31% ;
+            animation: 혀내밀기 1s infinite ease-in-out alternate;
+        }
+        .dog.hachi .face .face-cover .tongue .tongue-line {
+            position: absolute;
+            width: 9px;
+            height: 30px;
+            left: 13px;
+            background-color: black;
+            transform: rotate(5deg);
+            border-radius: 0 0 90% 0;
+        }
+        .dog.hachi .face .face-cover .tongue .tongue-line::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 7px;
+            height: 30px;
+            right: 3px;
+            background-color: #FF5E79;
+            border-radius: 0 0 90% 0;
+        }
+
+        /* 하루 표정 */
+        /* 눈 억울하게 */
+        .dog.haru .face .face-cover .eye {
+            width: 33px;
+            height: 33px;
+        }
+        .dog.haru .face .face-cover .eye .pupil.left-pupil {
+            top: 23px;
+            left: 13px;
+        }
+        .dog.haru .face .face-cover .eye .pupil.right-pupil {
+            top: 23px;
+            right: 13px;
+        }
+        .dog.haru .face .face-cover .eye-cover {
+            position: absolute;
+            width: 35px;
+            height: 23px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .dog.haru .face .face-cover .eye-cover.left-eye-cover {
+            transform: rotate(-30deg);
+            top: 91px;
+            left: 48px;
+        }
+        .dog.haru .face .face-cover .eye-cover.right-eye-cover {
+            transform: rotate(30deg);
+            top: 91px;
+            right: 48px;
+        }
+        /* 입 슬프게 */
+        .dog.haru .face .face-cover .mouth.lip-left {
+            left: 119px;
+            width: 20px;
+            top: 170px;
+        }
+        .dog.haru .face .face-cover .mouth-cover {
+            width: 55px;
+            height: 20px;
+            top: 177px;
+            left: 102px;
+        }
+        /* 하루 갈색코(그라데이션) */
+        .dog.haru .face .face-cover .nose.nose-top {
+            background: linear-gradient(black,#725530);
+        }
+        .dog.haru .face .face-cover .nose.nose-bottom {
+            background-color: #725530;
+        }
+        /* 하루 위로 이동 애니메이션 */
+        .dog.haru .face {
+            animation: 위로이동 4s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="mo2ha2">
+        <div class="dog hachi">
+            <div class="face">
+                <div class="part face-top-left"></div>
+                <div class="part face-top-middle"></div>
+                <div class="part face-top-right"></div> 
+                <div class="part face-bottom-right"></div>
+                <div class="part face-bottom-left"></div>
+                <div class="part face-bottom-middle"></div>
+                <div class="face-cover">
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="eye-cover"></div>
+                    <div class="orange-cover"></div>
+                    <div class="tongue">
+                        <div class="tongue-line"></div>
+                    </div>
+                    <div class="mouth lip-left"></div>
+                    <div class="mouth lip-right"></div>
+                    <div class="mouth-cover"></div>
+                    <div class="nose nose-top"></div>
+                    <div class="nose nose-bottom"></div>
+                </div>
+            </div>
+            <div class="img">
+                <img class="hover-img hachi-img" src="/img/hachi.JPEG" alt="하치이미지">
+            </div>
+        </div>
+        <div class="dog haru">
+            <div class="face">
+                <div class="part face-top-left"></div>
+                <div class="part face-top-middle"></div>
+                <div class="part face-top-right"></div> 
+                <div class="part face-bottom-right"></div>
+                <div class="part face-bottom-left"></div>
+                <div class="part face-bottom-middle"></div>
+                <div class="face-cover">
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye-cover left-eye-cover"></div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="eye-cover right-eye-cover"></div>
+                    <div class="nose nose-bottom"></div>
+                    <div class="nose nose-top"></div>
+                    <div class="mouth lip-left"></div>
+                    <div class="mouth-cover"></div>
+                </div>
+            </div>
+            <div class="img">
+                <img class="hover-img haru-img" src="/img/haru.JPEG" alt="하루이미지">
+            </div>
+        </div>
+        <div class="dog mori">
+            <div class="face">
+                <div class="part face-top-left"></div>
+                <div class="part face-top-middle"></div>
+                <div class="part face-top-right"></div> 
+                <div class="part face-bottom-right"></div>
+                <div class="part face-bottom-left"></div>
+                <div class="part face-bottom-middle"></div>
+                <div class="face-cover">
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="eye-cover left-eye-cover"></div>
+                    <div class="eye-cover right-eye-cover"></div>
+                    <div class="mouth lip"></div>
+                    <div class="mouth-cover"></div>
+                    <div class="nose nose-top"></div>
+                    <div class="nose nose-bottom"></div>
+                </div>
+            </div>
+            <div class="img">
+                <img class="hover-img mori-img" src="/img/mori.JPEG" alt="모리이미지">
+            </div>
+        </div>
+        <div class="dog mozzi">
+            <div class="face">
+                <div class="part face-top-left"></div>
+                <div class="part face-top-middle"></div>
+                <div class="part face-top-right"></div> 
+                <div class="part face-bottom-right"></div>
+                <div class="part face-bottom-left"></div>
+                <div class="part face-bottom-middle"></div>
+                <div class="face-cover">
+                    <div class="cheek left-cheek"></div>
+                    <div class="cheek right-cheek"></div>
+                    <div class="eye left-eye">
+                        <div class="pupil left-pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil right-pupil"></div>
+                    </div>
+                    <div class="chicken-doll">
+                        <div class="chicken-bone big"></div>
+                        <div class="chicken-bone small bone-top"></div>
+                        <div class="chicken-bone small bone-bottom"></div>
+                        <div class="chicken meat-top"></div>
+                        <div class="chicken meat-bottom"></div> 
+                    </div>
+                    <div class="mouth lip-left"></div>
+                    <div class="mouth lip-right"></div>
+                    <div class="mouth-cover"></div>
+                    <div class="nose nose-bottom"></div>
+                    <div class="nose nose-top"></div>
+                </div>
+            </div>
+            <div class="img">
+                <img class="hover-img mozzi-img" src="/img/mozzi.JPEG" alt="모찌이미지">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
