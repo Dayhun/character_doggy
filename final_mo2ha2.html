@@ -51,22 +51,6 @@
                 transform: translatey(-40px);
             }
         }
-        /* @keyframes 왼쪽이동 {
-            from {
-                transform: translatex(0px);
-            }
-            to {
-                transform: translatex(-15px);
-            }
-        }
-        @keyframes 오른쪽이동 {
-            from {
-                transform: translatex(0px);
-            }
-            to {
-                transform: translatex(15px);
-            }
-        } */
         @keyframes 위로이동 {
             0% {
                 transform: translateY(10px);
@@ -88,7 +72,6 @@
         }
         /* setting */
         :root {
-            /* --face-color: #FFFFF9; */
             --face-color: white;
             --tongue-color: #FF5E79;
         }
@@ -107,9 +90,7 @@
             box-sizing: border-box;
         }
         body {
-            /* background: #D1FEFF; */
-            /* height: 100vh; */
-            background-image: url('/footprint.png');
+            background-image: url('/img/footprint.png');
             background-repeat: repeat;
             background-size: cover;
         }
@@ -118,33 +99,26 @@
             margin: 0 auto;
             width: 1000px;
             height: 600px;
-            /* background: white; */
             top: 150px;
         }
         .dog {
             position: absolute;
-            /* width: 500px;
-            height: 400px; */
         }
         .dog.mozzi {
             top: 240px;
             left: 260px;
-            /* background: red; */
         }
         .dog.mori {
             top: 130px;
             left: 5px;
-            /* background: yellow; */
         }
         .dog.hachi {
             top: 130px;
             left: 500px;
-            /* background: green; */
         }
         .dog.haru {
             top: 80px;
             left: 257px;
-            /* background: orange; */
         }
 
         /* img hover */
@@ -173,9 +147,6 @@
             top: 170px;
             left: 450px;
         }
-
-
-
 
         /* 강아지 얼굴 */       
         /* 강아지(모리,하치,하루) 캐릭터 얼굴 형태 */
@@ -264,7 +235,6 @@
             width: 340px;
             height: 280px;
             border-radius: 50%;
-            /* border: 1px solid red; */
             background-color: var(--face-color);
         }
         /* 눈 */
@@ -328,7 +298,6 @@
         .dog .face .face-cover .mouth-cover {
             position: absolute;
             width: 55px;
-            /* height: 8px; */
             height: 37px;
             background-color: white;
             top: 130px;
@@ -472,18 +441,17 @@
             height: 40px;
             border-radius: 50%;
             background-color: white;
+            animation: 눈감기 2s infinite ;
         }
         .dog.mori .face .face-cover .eye-cover.left-eye-cover {
             transform: rotate(-30deg);
             top: 60px;
             left: 60px;
-            animation: 눈감기 2s infinite ;
         }
         .dog.mori .face .face-cover .eye-cover.right-eye-cover {
             transform: rotate(30deg);
             top: 60px;
             right: 60px;
-            animation: 눈감기 2s infinite ;
         }
         /* 모리 무표정 도톰한 입 */
         .dog.mori .face .face-cover .mouth.lip {
@@ -497,10 +465,6 @@
             height: 20px;
             top: 147px;
             left: 102px;
-        }
-        /* 모리 왼쪽 이동 애니메이션 */
-        .dog.mori .face {
-            animation: 왼쪽이동 1s infinite alternate;
         }
 
         /* 하치 표정 */
@@ -521,6 +485,7 @@
             top: 123px;
             left: 50px;
         }
+        /* 하치 입주변 노랗게 */
         .dog.hachi .face .face-cover .orange-cover {
             position: absolute;
             width: 65px;
@@ -559,10 +524,6 @@
             right: 3px;
             background-color: #FF5E79;
             border-radius: 0 0 90% 0;
-        }
-        /* 하치 오른쪽 이동 애니메이션 */
-        .dog.hachi .face {
-            animation: 오른쪽이동 1s infinite alternate;
         }
 
         /* 하루 표정 */
